@@ -11,8 +11,31 @@ nav {
   padding: 0 1rem;
 }
 .spinner {
-  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* display: flex;
   justify-content: center;
-  margin: 25px;
-  
+  margin: 25px; */
+
+}
+.books {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(309px, 1fr));
+  gap: 1rem;
+}
+.content {
+  min-height: calc(100vh - 70px - 62px);
+  padding: 1.5rem 0;
+}
+.card-content {
+  flex-grow: 1;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+}
+.card-image img {
+  width: 300px;
+  height: 450px;
 }
