@@ -7,6 +7,8 @@ function App() {
     </div>
   );
 }
-console.log('hello');
+function hello() {
+  console.log('hello');
+}
 
 export default App;
