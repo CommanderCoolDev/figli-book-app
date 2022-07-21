@@ -7,7 +7,6 @@ const MainView = () => {
   return (
     <>
       <Header />
-
       <Main />
       <Footer />
     </>
