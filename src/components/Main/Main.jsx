@@ -11,6 +11,7 @@ const Main = () => {
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
+    console.log(BASIC_URL);
     setLoading(true);
     const goFetch = () => {
       axios
