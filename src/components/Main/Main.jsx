@@ -5,6 +5,7 @@ import axios from 'axios';
 import Books from './Books';
 import { ToastContainer, toast, Zoom } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Search from '../Search/Search';
 
 const Main = () => {
   const [loading, setLoading] = useState(false);
@@ -30,6 +31,7 @@ const Main = () => {
 
   return (
     <main className="container content">
+      <Search />
       {loading ? <Spinner /> : <Books books={books} />}
       <ToastContainer autoClose={8000} transition={Zoom} />
     </main>

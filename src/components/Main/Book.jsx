@@ -24,7 +24,7 @@ const Book = ({ book }) => {
         )}
 
         <a
-          className="btn-floating halfway-fab waves-effect waves-light red"
+          className="btn-floating halfway-fab waves-effect waves-light teal lighten-1"
           href="/"
         >
           <i className="material-icons ">add</i>
