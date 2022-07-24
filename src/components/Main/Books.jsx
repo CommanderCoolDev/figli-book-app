@@ -1,5 +1,6 @@
 import Book from './Book';
 import Spinner from '../Spinner/Spinner';
+import Hero from '../Hero/Hero';
 
 import { useEffect } from 'react';
 
@@ -11,7 +12,7 @@ const Books = ({ books }) => {
       {books.length ? (
         books.map(book => <Book key={book.id} book={book} />)
       ) : (
-        <Spinner />
+        <Hero  />
       )}
     </div>
   );
