@@ -3,13 +3,7 @@ import Footer from '../../components/Footer/Footer';
 
 import Main from '../../components/Main/Main';
 
-
-
 const MainView = () => {
-  return (
-    
-     <Main/>
-    
-  );
+  return <Main />;
 };
 export default MainView;

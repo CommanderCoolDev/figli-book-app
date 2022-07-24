@@ -7,17 +7,15 @@ import Selected from './components/Selected/Selected';
 function App() {
   return (
     <div>
-       <Header />
+      <Header />
       <Routes>
-        <Route path='/' element={<MainView/>}/>
-        <Route path='/book/:id' element={<Selected/>}/>
+        <Route path="/" element={<MainView />} />
+        <Route path="/book/:id" element={<Selected />} />
       </Routes>
-     
+
       <Footer />
-      
     </div>
   );
 }
-
 
 export default App;

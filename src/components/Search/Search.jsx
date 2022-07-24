@@ -1,10 +1,9 @@
 const Search = ({ search, setSearch, handleSearch }) => {
-  
-  const handleKey = (e) => {
-    if (e.key === 'Enter') { 
-handleSearch()
+  const handleKey = e => {
+    if (e.key === 'Enter') {
+      handleSearch();
     }
-  }
+  };
   return (
     <div className="row">
       <div className="input-field col s12">

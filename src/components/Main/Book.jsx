@@ -1,5 +1,4 @@
-import {Link} from 'react-router-dom'
-
+import { Link } from 'react-router-dom';
 
 const Book = ({ book }) => {
   //   console.log(book);
@@ -12,24 +11,22 @@ const Book = ({ book }) => {
     <div className="card ">
       <div className="card-image">
         {book.volumeInfo.imageLinks ? (
-           <Link to={`/book/${book.id}`}>
-
-          <img
-            className="activator"
-            src={book.volumeInfo.imageLinks.thumbnail}
-            alt="img"
+          <Link to={`/book/${book.id}`}>
+            <img
+              className="activator"
+              src={book.volumeInfo.imageLinks.thumbnail}
+              alt="img"
             />
-            </Link>
+          </Link>
         ) : (
-             <Link to={`/book/${book.id}`}>
-
-          <img
-            className="activator"
-            src={`https://via.placeholder.com/300x450?text=ooops`}
-            // src={`https://i.picsum.photos/id/1025/300/450`} need to checkout
-            alt="img"
+          <Link to={`/book/${book.id}`}>
+            <img
+              className="activator"
+              src={`https://via.placeholder.com/300x450?text=ooops`}
+              // src={`https://i.picsum.photos/id/1025/300/450`} need to checkout
+              alt="img"
             />
-            </Link>
+          </Link>
         )}
 
         <a
