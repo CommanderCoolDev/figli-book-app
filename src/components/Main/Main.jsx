@@ -6,7 +6,7 @@ import Books from './Books';
 import { ToastContainer, toast, Zoom } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Search from '../Search/Search';
-import fetchSearch from '../../api/api'
+import {fetchSearch} from '../../api/api'
 import Hero from '../Hero/Hero';
 
 

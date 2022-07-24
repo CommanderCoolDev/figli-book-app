@@ -49,3 +49,21 @@ nav {
   justify-content: center;
  
 }
+.book-box{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 25px 50px;
+
+}
+.img-book {
+  width: 15%;
+}
+.book-descr{
+  padding:50px;
+  
+}
+.book-backBtn {
+  align-self: flex-start;
+}
