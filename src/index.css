@@ -52,13 +52,14 @@ nav {
   justify-content: center;
   align-items: center;
   margin: 25px 50px;
+  padding: 50px;
 }
 .img-book {
   width: 15%;
 }
-.book-descr {
+/* .selected-descr-box {
   padding: 50px;
-}
+} */
 .book-backBtn {
   align-self: flex-start;
 }

@@ -1,7 +1,7 @@
 import MainView from './views/MainView/MainView';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
-import { Route, Routes, Navigate } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Selected from './components/Selected/Selected';
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
     <div>
       <Header />
       <Routes>
-        <Route path="/" element={<MainView />} />
+        <Route path="/figli-book-app" element={<MainView />} />
         <Route path="/book/:id" element={<Selected />} />
       </Routes>
 

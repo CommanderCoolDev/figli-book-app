@@ -19,8 +19,8 @@ const Search = ({ search, setSearch, handleSearch }) => {
           className="btn"
           style={{
             position: 'absolute',
-            top: 0,
-            right: 0,
+            top: '5px',
+            right: '20px',
           }}
           onClick={handleSearch}
         >
