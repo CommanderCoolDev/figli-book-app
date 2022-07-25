@@ -18,13 +18,15 @@ const Main = () => {
     setLoading(true);
 
     fetchSearch(search, setBooks);
-    setTimeout(() => toast(`I found ${books.length} books`), 1500);
+
     setLoading(false);
   };
 
-  // if (books.length) {
-  //   toast(`I found ${books.length} books`);
-  // }
+  useEffect(() => {
+    if (books.length) {
+      toast(`I found ${books.length} books`);
+    }
+  }, [books.length]);
 
   return (
     <main className="container content">
