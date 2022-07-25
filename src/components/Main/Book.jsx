@@ -33,7 +33,7 @@ const Book = ({ book }) => {
           className="btn-floating halfway-fab waves-effect waves-light teal lighten-1"
           href="/"
         >
-          <i className="material-icons ">add</i>
+          <i className="material-icons lime lighten-1 ">add</i>
         </a>
       </div>
       <div className="card-content">

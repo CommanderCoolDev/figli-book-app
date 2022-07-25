@@ -23,7 +23,7 @@ const Selected = () => {
       ) : (
         <div className="book-box ">
           <button
-            className="btn lime lighten-4 backBtn"
+            className="btn lime lighten-1 backBtn"
             onClick={() => navigate(-1)}
           >
             Go Back
