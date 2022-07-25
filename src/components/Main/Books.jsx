@@ -9,11 +9,9 @@ const Books = ({ books }) => {
 
   return (
     <div className="books">
-      {books.length ? (
-        books.map(book => <Book key={book.id} book={book} />)
-      ) : (
-        <Hero />
-      )}
+      {books.map(book => (
+        <Book key={book.id} book={book} />
+      ))}
     </div>
   );
 };

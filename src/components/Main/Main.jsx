@@ -17,14 +17,14 @@ const Main = () => {
   const handleSearch = e => {
     setLoading(true);
 
-    setTimeout(() => fetchSearch(search, setBooks), 1500); //just for spinner(temporary)
-
+    fetchSearch(search, setBooks);
+    setTimeout(() => toast(`I found ${books.length} books`), 1500);
     setLoading(false);
   };
 
-  if (books.length) {
-    toast(`I found ${books.length} books`);
-  }
+  // if (books.length) {
+  //   toast(`I found ${books.length} books`);
+  // }
 
   return (
     <main className="container content">
@@ -33,8 +33,8 @@ const Main = () => {
         setSearch={setSearch}
         handleSearch={handleSearch}
       />
-      {loading ? <Spinner /> : <Books books={books} />}
-      <ToastContainer autoClose={8000} transition={Zoom} />
+      {!books.length ? <Hero /> : <Books books={books} />}
+      <ToastContainer autoClose={5000} transition={Zoom} />
     </main>
   );
 };

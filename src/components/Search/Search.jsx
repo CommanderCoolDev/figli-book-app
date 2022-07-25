@@ -5,7 +5,7 @@ const Search = ({ search, setSearch, handleSearch }) => {
     }
   };
   return (
-    <div className="row">
+    <div className="row search-box">
       <div className="input-field col s12">
         <input
           type="search"

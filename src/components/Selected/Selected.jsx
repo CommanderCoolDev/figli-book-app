@@ -8,9 +8,9 @@ const Selected = () => {
   const [selected, setSelected] = useState({});
   const navigate = useNavigate();
   // console.log(selected.data.volumeInfo.title)
-  const goBack = () => {
-    navigate('/');
-  };
+  // const goBack = () => {
+  //   navigate(-1);
+  // };
 
   useEffect(() => {
     getBookByID(id, setSelected);
@@ -22,7 +22,10 @@ const Selected = () => {
         <Spinner />
       ) : (
         <div className="book-box ">
-          <button className="btn book-backBtn" onClick={goBack}>
+          <button
+            className="btn lime lighten-4 backBtn"
+            onClick={() => navigate(-1)}
+          >
             Go Back
           </button>
           {selected.data.volumeInfo.imageLinks ? (

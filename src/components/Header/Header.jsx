@@ -1,8 +1,11 @@
 function Header() {
   return (
-    <nav className=" green accent-4">
+    <nav className=" green lime lighten-4">
       <div className="nav-wrapper">
-        <a href="/" className="blue-grey-text text-darken-3 brand-logo center">
+        <a
+          href="/figli-book-app"
+          className="blue-grey-text text-darken-3 brand-logo center"
+        >
           Figli
         </a>
         <ul id="nav-mobile" className="right hide-on-med-and-down">
