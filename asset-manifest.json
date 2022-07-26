@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/figli-book-app/static/css/main.333a6a58.css",
-    "main.js": "/figli-book-app/static/js/main.32d190c7.js",
+    "main.css": "/figli-book-app/static/css/main.f5659624.css",
+    "main.js": "/figli-book-app/static/js/main.aec7b614.js",
     "static/media/bg2.jpg": "/figli-book-app/static/media/bg2.91a5c0e067b999c30c5e.jpg",
     "index.html": "/figli-book-app/index.html",
-    "main.333a6a58.css.map": "/figli-book-app/static/css/main.333a6a58.css.map",
-    "main.32d190c7.js.map": "/figli-book-app/static/js/main.32d190c7.js.map"
+    "main.f5659624.css.map": "/figli-book-app/static/css/main.f5659624.css.map",
+    "main.aec7b614.js.map": "/figli-book-app/static/js/main.aec7b614.js.map"
   },
   "entrypoints": [
-    "static/css/main.333a6a58.css",
-    "static/js/main.32d190c7.js"
+    "static/css/main.f5659624.css",
+    "static/js/main.aec7b614.js"
   ]
 }
