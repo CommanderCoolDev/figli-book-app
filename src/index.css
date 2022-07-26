@@ -65,7 +65,7 @@ nav {
   background: #ebeddf;
   border: solid 2px #99876f;
   border-radius: 15px;
-  width:68%;
+  width: 68%;
 }
 .img-book {
   width: 15%;
@@ -101,4 +101,7 @@ nav {
   background: #ebeddf;
   border: solid 2px #99876f;
   border-radius: 15px;
+}
+.input-field{
+  z-index: 99;
 }

@@ -13,11 +13,18 @@ const Main = () => {
   const [loading, setLoading] = useState(false);
   const [books, setBooks] = useState([]);
   const [search, setSearch] = useState('');
+  const [selectedOption, setSelectedOption] = useState(null);
+  const options = [
+    { value: 10, label: '10 items per page' },
+    { value: 15, label: '15 items per page' },
+    { value: 20, label: '20 items per page' },
+    { value: 40, label: '40 items per page' },
+  ];
 
   const handleSearch = e => {
     setLoading(true);
 
-    fetchSearch(search, setBooks);
+    fetchSearch(search, setBooks, selectedOption);
 
     setLoading(false);
   };
@@ -35,6 +42,9 @@ const Main = () => {
           search={search}
           setSearch={setSearch}
           handleSearch={handleSearch}
+          options={options}
+          selectedOption={selectedOption}
+          setSelectedOption={setSelectedOption}
         />
       ) : (
         <Books books={books} />
