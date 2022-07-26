@@ -13,13 +13,6 @@ const Search = ({
   selectedOption,
   setSelectedOption,
 }) => {
-  const inputHandler = e => {
-    if (e.target.value === '') {
-      alert('Enter SMTH');
-    } else {
-      setSearch(e.target.value);
-    }
-  };
   const handleKey = e => {
     if (e.key === 'Enter') {
       if (!search) {
@@ -51,7 +44,7 @@ const Search = ({
             onChange={e => setSearch(e.target.value)}
           />
           <button
-            className="btn"
+            className="btn lime lighten-1"
             type="submit"
             style={{
               position: 'absolute',
@@ -63,12 +56,25 @@ const Search = ({
             Search
           </button>
         </div>
+      </div>
+      <div className="select-box row">
         <Select
-          className="limit-select"
+          className="react-select-container   "
           placeholder="Books per page...."
           defaultValue={selectedOption}
           onChange={setSelectedOption}
           options={options}
+          theme={theme => ({
+            ...theme,
+            borderRadius: '10px',
+
+            colors: {
+              ...theme.colors,
+              primary25: '#99876f',
+              primary: '#827717 ',
+              neutral0: '#ebeddf',
+            },
+          })}
         />
       </div>
       <Hero />

@@ -101,7 +101,18 @@ nav {
   background: #ebeddf;
   border: solid 2px #99876f;
   border-radius: 15px;
+  margin-bottom: 10px;
 }
-.input-field{
-  z-index: 99;
+.select-box{
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+  
 }
+
+.react-select-container{
+  border: solid 2px #99876f;
+    border-radius: 15px;
+    padding: 0;
+}
+
