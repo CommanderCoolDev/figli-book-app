@@ -10,12 +10,12 @@ const Books = ({ books }) => {
   const data = books.map(book => book.volumeInfo);
   const headers = [
     { label: 'Name', key: 'title' },
-    // { label: 'Author', key: 'authors' },
-    // { label: 'Publisher', key: 'publisher' },
-    // { label: 'Published Date', key: 'publishedDate' },
-    // { label: 'Categories', key: 'categories' },
-    // { label: 'Page Count', key: 'pageCount' },
-    // { label: 'Description', key: 'description' },
+    { label: 'Author', key: 'authors' },
+    { label: 'Publisher', key: 'publisher' },
+    { label: 'Published Date', key: 'publishedDate' },
+    { label: 'Categories', key: 'categories' },
+    { label: 'Page Count', key: 'pageCount' },
+    { label: 'Description', key: 'description' },
   ];
   const csvReport = {
     filename: 'Report.csv',
@@ -31,7 +31,7 @@ const Books = ({ books }) => {
   return (
     <>
       <div className="csv-box">
-        <CSVLink {...csvReport} className="btn lime lighten-1">
+        <CSVLink {...csvReport} separator=";" className="btn lime lighten-1">
           Export to CSV
         </CSVLink>
       </div>
