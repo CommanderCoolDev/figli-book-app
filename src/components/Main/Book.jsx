@@ -1,12 +1,8 @@
 import { Link } from 'react-router-dom';
 
-const Book = ({ book }) => {
-  //   console.log(book);
-  //   console.log(
-  //     book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : 'null',
-  //   );
-  //   console.log(book.volumeInfo.description.slice(0, 80));
-  //   console.log(typeof book.volumeInfo.description);
+const Book = ({ book, setShelf, addToShelf }) => {
+  // console.log(setShelf);
+
   return (
     <div className="card ">
       <div className="card-image">
@@ -29,12 +25,12 @@ const Book = ({ book }) => {
           </Link>
         )}
 
-        <a
+        <button
           className="btn-floating halfway-fab waves-effect waves-light teal lighten-1"
-          href="/"
+          onClick={() => addToShelf(book)}
         >
           <i className="material-icons lime lighten-1 ">add</i>
-        </a>
+        </button>
       </div>
       <div className="card-content">
         <span className="card-title">{book.volumeInfo.title}</span>

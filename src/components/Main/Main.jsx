@@ -7,19 +7,25 @@ import { ToastContainer, toast, Zoom } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Search from '../Search/Search';
 import { fetchSearch } from '../../api/api';
+
 // import Hero from '../Hero/Hero';
 
-const Main = () => {
+const Main = ({ shelf, setShelf }) => {
   const [loading, setLoading] = useState(false);
   const [books, setBooks] = useState([]);
   const [search, setSearch] = useState('');
   const [selectedOption, setSelectedOption] = useState(null);
+
   const options = [
     { value: 10, label: '10 items per page' },
     { value: 15, label: '15 items per page' },
     { value: 20, label: '20 items per page' },
     { value: 40, label: '40 items per page' },
   ];
+  const addToShelf = oneBook => {
+    setShelf([...shelf, oneBook]);
+    toast(`Book added to BookShelf`);
+  };
 
   const handleSearch = e => {
     setLoading(true);
@@ -47,7 +53,7 @@ const Main = () => {
           setSelectedOption={setSelectedOption}
         />
       ) : (
-        <Books books={books} />
+        <Books books={books} setShelf={setShelf} addToShelf={addToShelf} />
       )}
       <ToastContainer autoClose={5000} transition={Zoom} />
     </main>

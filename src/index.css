@@ -103,19 +103,19 @@ nav {
   border-radius: 15px;
   margin-bottom: 10px;
 }
-.select-box{
+.select-box {
   display: flex;
   justify-content: flex-start;
   margin-bottom: 10px;
-  
 }
 
-.react-select-container{
+.react-select-container {
   border: solid 2px #99876f;
-    border-radius: 15px;
-    padding: 0;
+  border-radius: 15px;
+  padding: 0;
 }
-.csv-box{
- margin-bottom: 15px;
+.csv-box {
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
 }
-

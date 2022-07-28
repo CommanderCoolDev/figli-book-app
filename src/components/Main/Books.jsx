@@ -1,11 +1,9 @@
 import Book from './Book';
-import Spinner from '../Spinner/Spinner';
-import Hero from '../Hero/Hero';
 import { CSVLink } from 'react-csv';
 
 import { useState, useEffect } from 'react';
 
-const Books = ({ books }) => {
+const Books = ({ books, setShelf, addToShelf }) => {
   const [csvData, setCsvData] = useState([]);
   const data = books.map(book => book.volumeInfo);
   const headers = [
@@ -22,11 +20,10 @@ const Books = ({ books }) => {
     headers: headers,
     data: csvData,
   };
-  // console.log(books);
+
   useEffect(() => {
     setCsvData(data);
   }, []);
-  console.log(csvData);
 
   return (
     <>
@@ -37,7 +34,12 @@ const Books = ({ books }) => {
       </div>
       <div className="books">
         {books.map(book => (
-          <Book key={book.id} book={book} />
+          <Book
+            key={book.id}
+            book={book}
+            setShelf={setShelf}
+            addToShelf={addToShelf}
+          />
         ))}
       </div>
     </>

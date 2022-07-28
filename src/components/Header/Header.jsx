@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 function Header() {
   return (
     <nav className=" green lime lighten-4">
@@ -9,6 +11,11 @@ function Header() {
           Figli
         </a>
         <ul id="nav-mobile" className="right hide-on-med-and-down">
+          <li className="active">
+            <Link to="/shelf" className="blue-grey-text text-darken-3">
+              BookShelf
+            </Link>
+          </li>
           <li>
             <a
               href="https://github.com/CommanderCoolDev/figli-book-app"
