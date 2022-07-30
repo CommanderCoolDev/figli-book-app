@@ -1,11 +1,19 @@
 import { useState, useEffect } from 'react';
-
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux/es/hooks/useDispatch';
 import { useNavigate } from 'react-router-dom';
 import { CSVLink } from 'react-csv';
+import { selectShelf } from '../../store/selectors/shelf-selector';
+import { removeFromShelf } from '../../store/actions/shelf-action';
+import { ToastContainer, toast, Zoom } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import ShelfItem from './ShelfItem';
 
-const Shelf = ({ shelf, setShelf }) => {
+const Shelf = () => {
   const [csvShelfData, setCsvShelfData] = useState([]);
+  const dispatch = useDispatch();
+  const shelf = useSelector(selectShelf);
+
   const data = shelf.map(shelf => shelf.volumeInfo);
   const headers = [
     { label: 'Name', key: 'title' },
@@ -22,6 +30,11 @@ const Shelf = ({ shelf, setShelf }) => {
     data: csvShelfData,
   };
   const navigate = useNavigate();
+
+  const handleRemoveFromShelf = item => {
+    dispatch(removeFromShelf(item));
+    toast('Book removed from shelf');
+  };
   useEffect(() => {
     setCsvShelfData(data);
   }, []);
@@ -48,11 +61,11 @@ const Shelf = ({ shelf, setShelf }) => {
           <ShelfItem
             key={shelfItem.id}
             shelfItem={shelfItem}
-            setShelf={setShelf}
-            shelf={shelf}
+            handleRemoveFromShelf={handleRemoveFromShelf}
           />
         ))}
       </div>
+      <ToastContainer autoClose={5000} transition={Zoom} />
     </div>
   );
 };

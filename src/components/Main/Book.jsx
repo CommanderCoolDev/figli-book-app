@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux/es/hooks/useDispatch';
+import { setShelf } from '../../store/actions/shelf-action';
 
-const Book = ({ book, setShelf, addToShelf }) => {
-  // console.log(setShelf);
+const Book = ({ book }) => {
+  const dispatch = useDispatch();
 
   return (
     <div className="card ">
@@ -27,7 +29,7 @@ const Book = ({ book, setShelf, addToShelf }) => {
 
         <button
           className="btn-floating halfway-fab waves-effect waves-light teal lighten-1"
-          onClick={() => addToShelf(book)}
+          onClick={() => dispatch(setShelf(book))}
         >
           <i className="material-icons lime lighten-1 ">add</i>
         </button>

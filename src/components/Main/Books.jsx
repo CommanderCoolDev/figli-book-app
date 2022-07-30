@@ -1,10 +1,14 @@
-import Book from './Book';
-import { CSVLink } from 'react-csv';
-
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux/es/hooks/useSelector';
+import { CSVLink } from 'react-csv';
+import { selectBooks } from '../../store/selectors/books-selector';
+import Book from './Book';
 
-const Books = ({ books, setShelf, addToShelf }) => {
+const Books = () => {
   const [csvData, setCsvData] = useState([]);
+  const books = useSelector(selectBooks);
+  const navigate = useNavigate();
   const data = books.map(book => book.volumeInfo);
   const headers = [
     { label: 'Name', key: 'title' },
@@ -28,18 +32,19 @@ const Books = ({ books, setShelf, addToShelf }) => {
   return (
     <>
       <div className="csv-box">
+        <button
+          className="btn lime lighten-1 backBtn"
+          onClick={() => navigate(-1)}
+        >
+          Go Back
+        </button>
         <CSVLink {...csvReport} separator=";" className="btn lime lighten-1">
           Export to CSV
         </CSVLink>
       </div>
       <div className="books">
         {books.map(book => (
-          <Book
-            key={book.id}
-            book={book}
-            setShelf={setShelf}
-            addToShelf={addToShelf}
-          />
+          <Book key={book.id} book={book} />
         ))}
       </div>
     </>

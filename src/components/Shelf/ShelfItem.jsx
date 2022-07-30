@@ -1,13 +1,6 @@
 import { Link } from 'react-router-dom';
-import { ToastContainer, toast, Zoom } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
-const ShelfItem = ({ shelfItem, setShelf, shelf }) => {
-  const removeFromShelf = item => {
-    const updShelf = shelf.filter(el => el.id !== item.id);
-    setShelf(updShelf);
-    toast(`Book removed from BookShelf`);
-  };
+const ShelfItem = ({ shelfItem, handleRemoveFromShelf }) => {
   return (
     <>
       <div className="card ">
@@ -32,7 +25,7 @@ const ShelfItem = ({ shelfItem, setShelf, shelf }) => {
           )}
           <button
             className="btn-floating halfway-fab waves-effect waves-light teal lighten-1"
-            onClick={() => removeFromShelf(shelfItem)}
+            onClick={() => handleRemoveFromShelf(shelfItem)}
           >
             <i className="material-icons lime lighten-1 ">remove</i>
           </button>
@@ -47,7 +40,6 @@ const ShelfItem = ({ shelfItem, setShelf, shelf }) => {
           </p>
         </div>
       </div>
-      {/* <ToastContainer autoClose={5000} transition={Zoom} /> */}
     </>
   );
 };
