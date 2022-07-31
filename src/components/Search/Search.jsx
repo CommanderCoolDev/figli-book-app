@@ -1,17 +1,18 @@
 import Hero from '../Hero/Hero';
 // import Filter from './Filter';
 import Select from 'react-select';
-import { useState } from 'react';
+
 import { ToastContainer, toast, Flip } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Filter from './Filter';
 
 const Search = ({
   search,
   setSearch,
   handleSearch,
   options,
-  selectedOption,
   setSelectedOption,
+  selectedOption,
 }) => {
   const handleKey = e => {
     if (e.key === 'Enter') {
@@ -57,26 +58,12 @@ const Search = ({
           </button>
         </div>
       </div>
-      <div className="select-box row">
-        <Select
-          className="react-select-container   "
-          placeholder="Books per page...."
-          defaultValue={selectedOption}
-          onChange={setSelectedOption}
-          options={options}
-          theme={theme => ({
-            ...theme,
-            borderRadius: '10px',
+      <Filter
+        options={options}
+        selectedOption={selectedOption}
+        setSelectedOption={setSelectedOption}
+      />
 
-            colors: {
-              ...theme.colors,
-              primary25: '#99876f',
-              primary: '#827717 ',
-              neutral0: '#ebeddf',
-            },
-          })}
-        />
-      </div>
       <Hero />
       <ToastContainer
         position="top-right"

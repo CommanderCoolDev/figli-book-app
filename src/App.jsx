@@ -13,7 +13,7 @@ function App() {
     <div className="bg">
       <Header />
       <Routes>
-        <Route path="/" element={<MainView />} />
+        <Route path="/figli-book-app" element={<MainView />} />
         <Route path="/book/:id" element={<Selected />} />
         <Route path="/shelf" element={<Shelf />} />
         <Route path="*" element={<NotFoundView />} />

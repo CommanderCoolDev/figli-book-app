@@ -5,7 +5,7 @@ const API_KEY = process.env.REACT_APP_API_KEY;
 // const BASIC_URL = `https://www.googleapis.com/books/v1/volumes?q=react&key=${API_KEY}&maxResults=20`;
 const BASIC_URL = `https://www.googleapis.com/books/v1/volumes?key=${API_KEY}`;
 
-export const fetchSearch = (search, setBooks, selectedOption) => {
+export const fetchSearch = search => {
   const response = axios.get(`${BASIC_URL}&q=${search}&maxResults=40`);
   return response;
   // axios

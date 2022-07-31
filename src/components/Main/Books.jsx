@@ -5,11 +5,12 @@ import { CSVLink } from 'react-csv';
 import { selectBooks } from '../../store/selectors/books-selector';
 import Book from './Book';
 
-const Books = () => {
+const Books = ({ booksByFilter }) => {
   const [csvData, setCsvData] = useState([]);
   const books = useSelector(selectBooks);
   const navigate = useNavigate();
   const data = books.map(book => book.volumeInfo);
+
   const headers = [
     { label: 'Name', key: 'title' },
     { label: 'Author', key: 'authors' },
@@ -43,7 +44,7 @@ const Books = () => {
         </CSVLink>
       </div>
       <div className="books">
-        {books.map(book => (
+        {booksByFilter.map(book => (
           <Book key={book.id} book={book} />
         ))}
       </div>
