@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux/es/exports';
 import Books from './Books';
-import { ToastContainer, toast, Zoom } from 'react-toastify';
+import { ToastContainer, toast, Zoom, Flip } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Search from '../Search/Search';
 import { fetchSearch } from '../../api/api';
@@ -76,7 +76,19 @@ const Main = () => {
       ) : (
         <Books booksByFilter={booksByFilter} />
       )}
-      <ToastContainer autoClose={5000} transition={Zoom} />
+      {/* <ToastContainer autoClose={5000} transition={Zoom} /> */}
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        transition={Flip}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </main>
   );
 };
