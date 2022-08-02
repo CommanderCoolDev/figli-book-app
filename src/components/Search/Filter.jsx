@@ -88,14 +88,6 @@ const Filter = ({ booksByFilter, setBooksByFilter }) => {
             },
           })}
         />
-        {/* <div>
-          <button
-            className=" btn filter-button lime lighten-1"
-            onClick={() => handleFilter()}
-          >
-            Set
-          </button>
-        </div> */}
       </div>
 
       <div className=" search-box col s8">
@@ -104,7 +96,6 @@ const Filter = ({ booksByFilter, setBooksByFilter }) => {
             type="search"
             id="search-field"
             placeholder="Search in titles..."
-            // onKeyDown={handleKey}
             value={searchTitle}
             onChange={e => setSearchTitle(e.target.value)}
           />
@@ -117,7 +108,6 @@ const Filter = ({ booksByFilter, setBooksByFilter }) => {
               top: '9px',
               right: '13px',
             }}
-            // onClick={handleClick}
           >
             Set Filters
           </button>

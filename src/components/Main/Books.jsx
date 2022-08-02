@@ -7,11 +7,11 @@ import Filter from '../Search/Filter';
 import Spinner from '../Spinner/Spinner';
 
 import Book from './Book';
+import { toast } from 'react-toastify';
 
 const Books = () => {
   const [csvData, setCsvData] = useState([]);
   const [booksByFilter, setBooksByFilter] = useState([]);
-  // const [selectedOption, setSelectedOption] = useState(40);
 
   const books = useSelector(selectBooks);
 
@@ -33,7 +33,12 @@ const Books = () => {
     headers: headers,
     data: csvData,
   };
-  // console.log(booksByFilter);
+  useEffect(() => {
+    if (books.length > 0) {
+      toast(`I showed ${books.length} books`);
+    }
+  }, [books]);
+
   useEffect(() => {
     if (booksByFilter.length === 0) {
       setCsvData(data);

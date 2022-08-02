@@ -2,10 +2,7 @@ import { useNavigate } from 'react-router-dom';
 
 const NotFound = () => {
   const navigate = useNavigate();
-  // console.log(selected.data.volumeInfo.title)
-  //   const goBack = () => {
-  //     navigate('/figli-book-app');
-  //   };
+
   return (
     <div className="box-notFound">
       <h3 className="notFound-title">Something go wrong</h3>

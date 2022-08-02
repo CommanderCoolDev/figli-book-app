@@ -73,11 +73,6 @@ const Search = ({
           </button>
         </div>
       </div>
-      {/* <Filter
-        // options={options}
-        selectedOption={selectedOption}
-        setSelectedOption={setSelectedOption}
-      /> */}
 
       <Hero />
     </>

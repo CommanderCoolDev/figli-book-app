@@ -8,15 +8,6 @@ const BASIC_URL = `https://www.googleapis.com/books/v1/volumes?key=${API_KEY}`;
 export const fetchSearch = search => {
   const response = axios.get(`${BASIC_URL}&q=${search}&maxResults=40`);
   return response;
-  // axios
-  //   .get(
-  //     `${BASIC_URL}&q=${search}&maxResults=${
-  //       selectedOption === null ? 20 : selectedOption.value
-  //     }`,
-  //   )
-  //   .then(resp => setBooks(resp.data.items))
-
-  //   .catch(err => console.log(err));
 };
 
 export const getBookByID = (id, setSelected) => {

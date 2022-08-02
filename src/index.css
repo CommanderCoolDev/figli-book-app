@@ -76,9 +76,7 @@ nav {
 .hero-img {
   width: 25%;
 }
-/* .selected-descr-box {
-  padding: 50px;
-} */
+
 .backBtn {
   align-self: flex-start;
 }
@@ -89,7 +87,7 @@ nav {
   align-items: center;
   margin: 25px auto;
   padding: 15px;
-  /* margin-bottom: 25px; */
+ 
   width: 50%;
   background: #ebeddf;
   border: solid 2px #99876f;
@@ -103,7 +101,7 @@ nav {
   border: solid 2px #99876f;
   border-radius: 15px;
   max-height: 89px;
-  /* margin-bottom: 10px; */
+ 
 }
 
 .select-box {
@@ -111,11 +109,7 @@ nav {
   justify-content: flex-start;
   margin-bottom: 10px;
 }
-/* .filter-box{
-  display: flex;
-    justify-content: space-around;
-    align-items: center;
-} */
+
 .react-select-container {
   margin-left: -13px;
 }
