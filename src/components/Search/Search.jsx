@@ -1,19 +1,27 @@
+import { useNavigate } from 'react-router-dom';
+import { fetchSearch } from '../../api/api';
+import { useDispatch, useSelector } from 'react-redux';
 import Hero from '../Hero/Hero';
 // import Filter from './Filter';
 import Select from 'react-select';
+import { selectBooks } from '../../store/selectors/books-selector';
+import { setBooks } from '../../store/actions/books-action';
 
-import { ToastContainer, toast, Flip } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Filter from './Filter';
 
 const Search = ({
   search,
   setSearch,
-  handleSearch,
-  options,
-  setSelectedOption,
-  selectedOption,
+  // handleSearch,
+
+  // setSelectedOption,
+  // selectedOption,
 }) => {
+  const navigate = useNavigate();
+  const books = useSelector(selectBooks);
+  const dispatch = useDispatch();
   const handleKey = e => {
     if (e.key === 'Enter') {
       if (!search) {
@@ -31,6 +39,13 @@ const Search = ({
     } else {
       handleSearch();
     }
+  };
+  const handleSearch = e => {
+    fetchSearch(search)
+      .then(resp => dispatch(setBooks(resp.data.items)))
+
+      .catch(err => console.log(err));
+    navigate('/books');
   };
   return (
     <>
@@ -58,11 +73,11 @@ const Search = ({
           </button>
         </div>
       </div>
-      <Filter
-        options={options}
+      {/* <Filter
+        // options={options}
         selectedOption={selectedOption}
         setSelectedOption={setSelectedOption}
-      />
+      /> */}
 
       <Hero />
     </>

@@ -7,6 +7,7 @@ import Footer from './components/Footer/Footer';
 import Selected from './components/Selected/Selected';
 import NotFoundView from './views/NotFoundView/NotFoundView';
 import Shelf from './components/Shelf/Shelf';
+import Books from './components/Main/Books';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/figli-book-app" element={<MainView />} />
+        <Route path="/books" element={<Books />} />
         <Route path="/book/:id" element={<Selected />} />
         <Route path="/shelf" element={<Shelf />} />
         <Route path="*" element={<NotFoundView />} />
