@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { ToastContainer, toast, Flip } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import { Route, Routes } from 'react-router-dom';
 import MainView from './views/MainView/MainView';
@@ -20,7 +22,18 @@ function App() {
         <Route path="/shelf" element={<Shelf />} />
         <Route path="*" element={<NotFoundView />} />
       </Routes>
-
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        transition={Flip}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
       <Footer />
     </div>
   );

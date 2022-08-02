@@ -17,7 +17,6 @@ nav {
   position: absolute;
   top: 50%;
   left: 48%;
-  
 }
 .books {
   display: grid;
@@ -103,17 +102,23 @@ nav {
   background: #ebeddf;
   border: solid 2px #99876f;
   border-radius: 15px;
+  max-height: 89px;
   /* margin-bottom: 10px; */
 }
-
 
 .select-box {
   display: flex;
   justify-content: flex-start;
   margin-bottom: 10px;
 }
-
-
+/* .filter-box{
+  display: flex;
+    justify-content: space-around;
+    align-items: center;
+} */
+.react-select-container {
+  margin-left: -13px;
+}
 
 .csv-box {
   margin-bottom: 15px;
@@ -126,8 +131,11 @@ nav {
   justify-content: center;
   align-items: center;
   padding: 15px;
-  height: 100vh;
+  height: 100%;
   background: #ebeddf;
   border: solid 2px #99876f;
   border-radius: 15px;
+}
+.notFound-img {
+  width: 35%;
 }

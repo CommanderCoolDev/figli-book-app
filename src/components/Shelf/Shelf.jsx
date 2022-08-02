@@ -82,7 +82,6 @@ const Shelf = () => {
           />
         ))}
       </div>
-      <ToastContainer autoClose={5000} transition={Zoom} />
     </div>
   );
 };

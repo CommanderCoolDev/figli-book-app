@@ -10,11 +10,14 @@ import Book from './Book';
 
 const Books = () => {
   const [csvData, setCsvData] = useState([]);
-  const [selectedOption, setSelectedOption] = useState(40);
+  const [booksByFilter, setBooksByFilter] = useState([]);
+  // const [selectedOption, setSelectedOption] = useState(40);
 
   const books = useSelector(selectBooks);
+
   const navigate = useNavigate();
   const data = books.map(book => book.volumeInfo);
+  const filteredData = booksByFilter.map(book => book.volumeInfo);
 
   const headers = [
     { label: 'Name', key: 'title' },
@@ -30,44 +33,83 @@ const Books = () => {
     headers: headers,
     data: csvData,
   };
-
+  // console.log(booksByFilter);
   useEffect(() => {
-    setCsvData(data);
-    
-  }, []);
+    if (booksByFilter.length === 0) {
+      setCsvData(data);
+    } else {
+      setCsvData(filteredData);
+    }
+  }, [booksByFilter]);
 
   return (
     <>
       <div className="container content">
-        {!books.length ? (
-          <Spinner />
+        {booksByFilter.length > 0 ? (
+          <>
+            {!booksByFilter.length ? (
+              <Spinner />
+            ) : (
+              <>
+                <div className="csv-box">
+                  <button
+                    className="btn lime lighten-1 backBtn"
+                    onClick={() => navigate(-1)}
+                  >
+                    Go Back
+                  </button>
+                  <CSVLink
+                    {...csvReport}
+                    separator=";"
+                    className="btn lime lighten-1"
+                  >
+                    Export to CSV
+                  </CSVLink>
+                </div>
+                <Filter
+                  booksByFilter={booksByFilter}
+                  setBooksByFilter={setBooksByFilter}
+                />
+                <div className="books">
+                  {booksByFilter.map(book => (
+                    <Book key={book.id} book={book} />
+                  ))}
+                </div>
+              </>
+            )}
+          </>
         ) : (
           <>
-            <div className="csv-box">
-              <button
-                className="btn lime lighten-1 backBtn"
-                onClick={() => navigate(-1)}
-              >
-                Go Back
-              </button>
-              <CSVLink
-                {...csvReport}
-                separator=";"
-                className="btn lime lighten-1"
-              >
-                Export to CSV
-              </CSVLink>
-            </div>
-            <Filter
-              // options={options}
-              selectedOption={selectedOption}
-              setSelectedOption={setSelectedOption}
-            />
-            <div className="books">
-              {books.map(book => (
-                <Book key={book.id} book={book} />
-              ))}
-            </div>
+            {!books.length ? (
+              <Spinner />
+            ) : (
+              <>
+                <div className="csv-box">
+                  <button
+                    className="btn lime lighten-1 backBtn"
+                    onClick={() => navigate(-1)}
+                  >
+                    Go Back
+                  </button>
+                  <CSVLink
+                    {...csvReport}
+                    separator=";"
+                    className="btn lime lighten-1"
+                  >
+                    Export to CSV
+                  </CSVLink>
+                </div>
+                <Filter
+                  booksByFilter={booksByFilter}
+                  setBooksByFilter={setBooksByFilter}
+                />
+                <div className="books">
+                  {books.map(book => (
+                    <Book key={book.id} book={book} />
+                  ))}
+                </div>
+              </>
+            )}
           </>
         )}
       </div>

@@ -13,7 +13,7 @@ import { selectBooks } from '../../store/selectors/books-selector';
 const Main = () => {
   const [search, setSearch] = useState('');
   // const [selectedOption, setSelectedOption] = useState(40);
-  const [booksByFilter, setBooksByFilter] = useState([]);
+  // const [booksByFilter, setBooksByFilter] = useState([]);
   const loading = useSelector(getLoading);
   const books = useSelector(selectBooks);
   const dispatch = useDispatch();

@@ -6,11 +6,11 @@ function Header() {
       <div className="nav-wrapper">
         <a
           href="/figli-book-app"
-          className="blue-grey-text text-darken-3 brand-logo center"
+          className="blue-grey-text text-darken-3 brand-logo center right-on-med-and-down"
         >
           Figli
         </a>
-        <ul id="nav-mobile" className="left hide-on-med-and-down">
+        <ul id="nav-mobile" className="left ">
           <li className="active">
             <Link to="/shelf" className="blue-grey-text text-darken-3">
               BookShelf

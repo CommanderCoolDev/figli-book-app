@@ -1,20 +1,27 @@
 import Select from 'react-select';
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
+import { selectBooks } from '../../store/selectors/books-selector';
+import { toast } from 'react-toastify';
 
-const Filter = ({ selectedOption, setSelectedOption }) => {
+const Filter = ({ booksByFilter, setBooksByFilter }) => {
+  const [selectedOption, setSelectedOption] = useState(40);
   const [searchTitle, setSearchTitle] = useState('');
+
+  const books = useSelector(selectBooks);
+
   const options = [
-    { value: 10, label: '10 items per page' },
-    { value: 15, label: '15 items per page' },
-    { value: 20, label: '20 items per page' },
-    { value: 40, label: '40 items per page' },
+    { value: 10, label: '10 books per page' },
+    { value: 15, label: '15 books per page' },
+    { value: 20, label: '20 books per page' },
+    { value: 40, label: '40 books per page' },
   ];
   const customStyles = {
     container: provided => ({
       ...provided,
       border: 'solid 2px #99876f',
       borderRadius: 15,
-      padding: 0,
+
       background: '#ebeddf',
     }),
     control: provided => ({
@@ -31,13 +38,41 @@ const Filter = ({ selectedOption, setSelectedOption }) => {
       marginBottom: 0,
     }),
   };
+
+  const handleFilter = e => {
+    let filteredBooks = [...books];
+
+    if (selectedOption === 40) {
+      filteredBooks.length = selectedOption;
+      if (searchTitle) {
+        filteredBooks = books.filter(el =>
+          el.volumeInfo.title.toLowerCase().includes(searchTitle),
+        );
+      }
+    } else if (selectedOption.value) {
+      filteredBooks.length = selectedOption.value;
+      if (searchTitle) {
+        filteredBooks = books.filter(el =>
+          el.volumeInfo.title.toLowerCase().includes(searchTitle),
+        );
+      }
+    }
+
+    setBooksByFilter(filteredBooks);
+    toast(
+      `Filtered ${filteredBooks.length} ${
+        filteredBooks.length > 1 ? 'books' : 'book'
+      }`,
+    );
+  };
+
   return (
     <div className="select-box row">
-      <div className="filter-box col s3 ">
+      <div className="filter-box col  ">
         <Select
           styles={customStyles}
           className="react-select-container  "
-          placeholder="10 by default"
+          placeholder="40 by default"
           defaultValue={selectedOption}
           onChange={setSelectedOption}
           options={options}
@@ -53,13 +88,22 @@ const Filter = ({ selectedOption, setSelectedOption }) => {
             },
           })}
         />
+        {/* <div>
+          <button
+            className=" btn filter-button lime lighten-1"
+            onClick={() => handleFilter()}
+          >
+            Set
+          </button>
+        </div> */}
       </div>
+
       <div className=" search-box col s8">
         <div className="input-field col s12">
           <input
             type="search"
             id="search-field"
-            placeholder="Search..."
+            placeholder="Search in titles..."
             // onKeyDown={handleKey}
             value={searchTitle}
             onChange={e => setSearchTitle(e.target.value)}
@@ -67,6 +111,7 @@ const Filter = ({ selectedOption, setSelectedOption }) => {
           <button
             className="btn lime lighten-1"
             type="submit"
+            onClick={() => handleFilter()}
             style={{
               position: 'absolute',
               top: '9px',
@@ -74,7 +119,7 @@ const Filter = ({ selectedOption, setSelectedOption }) => {
             }}
             // onClick={handleClick}
           >
-            Search in Titles
+            Set Filters
           </button>
         </div>
       </div>

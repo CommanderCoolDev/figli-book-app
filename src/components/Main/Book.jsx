@@ -1,9 +1,15 @@
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux/es/hooks/useDispatch';
 import { setShelf } from '../../store/actions/shelf-action';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Book = ({ book }) => {
   const dispatch = useDispatch();
+  const handleAddToShelfClick = book => {
+    dispatch(setShelf(book));
+    toast('Book added to shelf!');
+  };
 
   return (
     <div className="card ">
@@ -29,7 +35,7 @@ const Book = ({ book }) => {
 
         <button
           className="btn-floating halfway-fab waves-effect waves-light teal lighten-1"
-          onClick={() => dispatch(setShelf(book))}
+          onClick={() => handleAddToShelfClick(book)}
         >
           <i className="material-icons lime lighten-1 ">add</i>
         </button>
