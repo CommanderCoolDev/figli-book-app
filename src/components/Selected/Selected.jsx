@@ -1,24 +1,28 @@
-import { getBookByID } from '../../api/api';
+// import { getBookByID } from '../../api/api';
 import { useParams, useNavigate } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
+
 import Spinner from '../Spinner/Spinner';
+
+import { selectSelected } from '../../store/selectors/selected-selectors';
 
 const Selected = () => {
   const { id } = useParams();
-  const [selected, setSelected] = useState({});
+
+  const selected = useSelector(selectSelected);
   const navigate = useNavigate();
-  // console.log(selected.data.volumeInfo.title)
-  // const goBack = () => {
-  //   navigate(-1);
-  // };
+  const data = selected[0];
 
   useEffect(() => {
-    getBookByID(id, setSelected);
+    toast(`${data.volumeInfo.title}`);
+    // getBookByID(id, setSelected); // forbackend render
   }, [id]);
 
   return (
     <>
-      {!selected.data ? (
+      {!data ? (
         <Spinner />
       ) : (
         <div className="book-box ">
@@ -28,9 +32,9 @@ const Selected = () => {
           >
             Go Back
           </button>
-          {selected.data.volumeInfo.imageLinks ? (
+          {data.volumeInfo.imageLinks ? (
             <img
-              src={selected.data.volumeInfo.imageLinks.thumbnail}
+              src={data.volumeInfo.imageLinks.thumbnail}
               alt=""
               className="img-book"
             />
@@ -44,19 +48,17 @@ const Selected = () => {
           )}
 
           <div className="selected-info-box">
-            <h2 className="book-title">
-              Name: {selected.data.volumeInfo.title}
-            </h2>
-            <h3>Author: {selected.data.volumeInfo.authors}</h3>
+            <h2 className="book-title">Name: {data.volumeInfo.title}</h2>
+            <h3>Author: {data.volumeInfo.authors}</h3>
             <h4>
-              Publisher: {selected.data.volumeInfo.publisher}{' '}
-              <span>{selected.data.volumeInfo.publishedDate}</span>
+              Publisher: {data.volumeInfo.publisher}{' '}
+              <span>{data.volumeInfo.publishedDate}</span>
             </h4>
-            <p>Categories: {selected.data.volumeInfo.categories} </p>
-            <p>Page Count: {selected.data.volumeInfo.pageCount} pgs.</p>
+            <p>Categories: {data.volumeInfo.categories} </p>
+            <p>Page Count: {data.volumeInfo.pageCount} pgs.</p>
           </div>
           <div className="selected-descr-box">
-            <p className="book-descr">{selected.data.volumeInfo.description}</p>
+            <p className="book-descr">{data.volumeInfo.description}</p>
           </div>
         </div>
       )}

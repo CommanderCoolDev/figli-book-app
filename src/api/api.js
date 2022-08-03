@@ -10,9 +10,9 @@ export const fetchSearch = search => {
   return response;
 };
 
-export const getBookByID = (id, setSelected) => {
-  axios
-    .get(`https://www.googleapis.com/books/v1/volumes/${id}`)
-    .then(resp => setSelected(resp))
-    .catch(err => console.log(err));
-};
+// export const getBookByID = (id, setSelected) => {
+//   axios
+//     .get(`https://www.googleapis.com/books/v1/volumes/${id}`)
+//     .then(resp => setSelected(resp))
+//     .catch(err => console.log(err));
+// }; // for backend

@@ -87,7 +87,7 @@ nav {
   align-items: center;
   margin: 25px auto;
   padding: 15px;
- 
+
   width: 50%;
   background: #ebeddf;
   border: solid 2px #99876f;
@@ -101,7 +101,6 @@ nav {
   border: solid 2px #99876f;
   border-radius: 15px;
   max-height: 89px;
- 
 }
 
 .select-box {

@@ -1,7 +1,6 @@
 import { GET_BOOKS } from '../constants/books-constants';
 const initialState = {
   books: [],
-  filteredBooks: [],
 };
 
 export function bookReducer(state = initialState, action) {

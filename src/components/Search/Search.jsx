@@ -1,31 +1,20 @@
 import { useNavigate } from 'react-router-dom';
 import { fetchSearch } from '../../api/api';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import Hero from '../Hero/Hero';
-// import Filter from './Filter';
-import Select from 'react-select';
-import { selectBooks } from '../../store/selectors/books-selector';
+
 import { setBooks } from '../../store/actions/books-action';
 
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Filter from './Filter';
 
-const Search = ({
-  search,
-  setSearch,
-  // handleSearch,
-
-  // setSelectedOption,
-  // selectedOption,
-}) => {
+const Search = ({ search, setSearch }) => {
   const navigate = useNavigate();
-  const books = useSelector(selectBooks);
+
   const dispatch = useDispatch();
   const handleKey = e => {
     if (e.key === 'Enter') {
       if (!search) {
-        // alert('Enter smth')
         toast.error('Please enter smthng', {});
       } else {
         handleSearch();
@@ -34,7 +23,6 @@ const Search = ({
   };
   const handleClick = () => {
     if (!search) {
-      // alert('Enter smth')
       toast.error('Please enter smthng', {});
     } else {
       handleSearch();

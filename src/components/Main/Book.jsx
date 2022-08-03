@@ -1,36 +1,44 @@
-import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux/es/hooks/useDispatch';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+
 import { setShelf } from '../../store/actions/shelf-action';
 import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+
+import { setSelected } from '../../store/actions/selected-action';
+import { selectBooks } from '../../store/selectors/books-selector';
 
 const Book = ({ book }) => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
+  const books = useSelector(selectBooks);
   const handleAddToShelfClick = book => {
     dispatch(setShelf(book));
     toast('Book added to shelf!');
+  };
+  const id = book.id;
+  const handleSelect = (books, id) => {
+    dispatch(setSelected(books, id));
+    navigate(`/book/${book.id}`);
   };
 
   return (
     <div className="card ">
       <div className="card-image">
         {book.volumeInfo.imageLinks ? (
-          <Link to={`/book/${book.id}`}>
-            <img
-              className="activator"
-              src={book.volumeInfo.imageLinks.thumbnail}
-              alt="img"
-            />
-          </Link>
+          <img
+            className="activator"
+            src={book.volumeInfo.imageLinks.thumbnail}
+            alt="img"
+            onClick={() => handleSelect(books, id)}
+          />
         ) : (
-          <Link to={`/book/${book.id}`}>
-            <img
-              className="activator"
-              src={`https://via.placeholder.com/300x450?text=ooops`}
-              // src={`https://i.picsum.photos/id/1025/300/450`} need to checkout
-              alt="img"
-            />
-          </Link>
+          <img
+            className="activator"
+            src={`https://via.placeholder.com/300x450?text=ooops`}
+            // src={`https://i.picsum.photos/id/1025/300/450`} need to checkout
+            alt="img"
+            onClick={() => handleSelect(books, id)}
+          />
         )}
 
         <button
