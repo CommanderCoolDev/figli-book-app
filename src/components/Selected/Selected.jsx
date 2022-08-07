@@ -3,9 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
-
 import Spinner from '../Spinner/Spinner';
-
 import { selectSelected } from '../../store/selectors/selected-selectors';
 
 const Selected = () => {

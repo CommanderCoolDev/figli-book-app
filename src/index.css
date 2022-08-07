@@ -132,3 +132,18 @@ nav {
 .notFound-img {
   width: 35%;
 }
+.auth-box {
+  height: 74vh;
+  width: 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #ebeddf;
+  margin: 15px auto;
+  border: 2px solid #99876f;
+  border-radius: 15px;
+}
+.log-out-btn {
+  margin-left: 10px;
+}

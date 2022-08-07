@@ -1,12 +1,14 @@
 import { combineReducers } from 'redux';
-import { loadingReducer } from './loading-reducer';
+import { authReducer } from './auth-reducer';
 import { bookReducer } from './books-reducer';
 import { shelfReducer } from './shelf-reducer';
 import { selectedReducer } from './selected-reducer';
+import { userReducer } from './user-reducer';
 
 export const rootReducer = combineReducers({
-  loadingReducer,
+  authReducer,
   bookReducer,
   shelfReducer,
   selectedReducer,
+  userReducer,
 });

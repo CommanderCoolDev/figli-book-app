@@ -1,21 +1,34 @@
 import { Link } from 'react-router-dom';
+import { getAuth, getUser } from '../../store/selectors/user-selector';
+import { useSelector, useDispatch } from 'react-redux';
+import { setUser } from '../../store/actions/user-action';
+import { removeUser } from '../../store/actions/user-action';
 
 function Header() {
+  const dispatch = useDispatch();
+  const isAuth = useSelector(getAuth);
+  const user = useSelector(getUser);
+  const handleLogOut = () => {
+    dispatch(removeUser());
+  };
   return (
     <nav className=" green lime lighten-4">
       <div className="nav-wrapper">
         <a
-          href="/figli-book-app"
+          href="/"
           className="blue-grey-text text-darken-3 brand-logo center right-on-med-and-down"
         >
           Figli
         </a>
         <ul id="nav-mobile" className="left ">
-          <li className="active">
-            <Link to="/shelf" className="blue-grey-text text-darken-3">
-              BookShelf
-            </Link>
-          </li>
+          {isAuth ? (
+            <li className="active">
+              <Link to="/shelf" className="blue-grey-text text-darken-3">
+                BookShelf
+              </Link>
+            </li>
+          ) : null}
+
           <li>
             <a
               href="https://github.com/CommanderCoolDev/figli-book-app"
@@ -26,6 +39,17 @@ function Header() {
               Repo
             </a>
           </li>
+          {isAuth ? (
+            <li className="blue-grey-text text-darken-3">
+              {user}
+              <button
+                className="btn log-out-btn lime lighten-1"
+                onClick={() => handleLogOut()}
+              >
+                Log Out
+              </button>
+            </li>
+          ) : null}
         </ul>
       </div>
     </nav>

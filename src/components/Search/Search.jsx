@@ -2,9 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { fetchSearch } from '../../api/api';
 import { useDispatch } from 'react-redux';
 import Hero from '../Hero/Hero';
-
 import { setBooks } from '../../store/actions/books-action';
-
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
