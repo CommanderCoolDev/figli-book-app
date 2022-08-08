@@ -3,16 +3,12 @@ import AuthForm from './AuthForm';
 import { useDispatch } from 'react-redux';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import { setUser } from '../../store/actions/user-action';
-
-// import TextField from '@mui/material/TextField';
-// import Button from '@mui/material/Button';
+import { toast } from 'react-toastify';
 
 const LoginForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  // console.log(login);
-  // console.log(password);
   const handleLogin = (email, password) => {
     const auth = getAuth();
     signInWithEmailAndPassword(auth, email, password)
@@ -24,10 +20,11 @@ const LoginForm = () => {
             token: user.accessToken,
             userId: user.uid,
           }),
+          toast(`Welcome ${user.email}!`),
         );
         navigate('/figli-book-app');
       })
-      .catch(err => console.log(err));
+      .catch(err => toast(`${err}`));
   };
 
   return (

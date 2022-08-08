@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import { ToastContainer, toast, Flip } from 'react-toastify';
+import { ToastContainer, Flip } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Route, Routes } from 'react-router-dom';
 import MainView from './views/MainView/MainView';
@@ -9,7 +8,7 @@ import Selected from './components/Selected/Selected';
 import NotFoundView from './views/NotFoundView/NotFoundView';
 import Shelf from './components/Shelf/Shelf';
 import Books from './components/Main/Books';
-import AuthView from './views/AuthView/AuthView';
+
 import LoginView from './views/AuthView/LoginView';
 import RegisterView from './views/AuthView/RegisterView';
 import PrivateRoute from './components/Routes/PrivateRoute';

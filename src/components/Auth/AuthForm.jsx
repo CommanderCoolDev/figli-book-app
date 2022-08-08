@@ -8,7 +8,7 @@ const AuthForm = ({ title, handleClick }) => {
     <Box
       component="form"
       sx={{
-        '& .MuiTextField-root': { m: 1, width: '25ch' },
+        '& .MuiTextField-root': { m: 1, width: '35ch' },
       }}
       display="flex"
       flexDirection="column"
@@ -16,8 +16,10 @@ const AuthForm = ({ title, handleClick }) => {
       alignItems="center"
     >
       <div>
+        <h4>{title}</h4>
+      </div>
+      <div>
         <TextField
-          required
           label="Login"
           variant="outlined"
           value={login}
@@ -26,9 +28,9 @@ const AuthForm = ({ title, handleClick }) => {
       </div>
       <div>
         <TextField
-          required
           label="Password"
           variant="outlined"
+          type="password"
           value={password}
           onChange={e => setPassword(e.target.value)}
         />

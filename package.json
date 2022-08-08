@@ -2,7 +2,7 @@
   "name": "figli-book-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://CommanderCoolDev.github.io/login",
+  "homepage": "https://CommanderCoolDev.github.io/figli-book-app",
   "dependencies": {
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",

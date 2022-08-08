@@ -3,13 +3,16 @@ import { getAuth, getUser } from '../../store/selectors/user-selector';
 import { useSelector, useDispatch } from 'react-redux';
 import { setUser } from '../../store/actions/user-action';
 import { removeUser } from '../../store/actions/user-action';
+import { toast } from 'react-toastify';
 
 function Header() {
   const dispatch = useDispatch();
   const isAuth = useSelector(getAuth);
   const user = useSelector(getUser);
+  console.log(user);
   const handleLogOut = () => {
     dispatch(removeUser());
+    toast(`User  ${user} logged out! Seeya!)`);
   };
   return (
     <nav className=" green lime lighten-4">

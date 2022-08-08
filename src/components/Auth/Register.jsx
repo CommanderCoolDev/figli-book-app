@@ -5,8 +5,6 @@ import { setUser } from '../../store/actions/user-action';
 import AuthForm from './AuthForm';
 import { toast } from 'react-toastify';
 
-// import { Box, TextField, Button } from '@mui/material';
-
 const RegisterForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -21,6 +19,7 @@ const RegisterForm = () => {
             token: user.accessToken,
             userId: user.uid,
           }),
+          toast(`Welcome ${user.email}!`),
         );
         navigate('/figli-book-app');
       })
