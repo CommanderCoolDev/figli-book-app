@@ -3,7 +3,7 @@ import { PacmanLoader } from 'react-spinners';
 export default function Spinner() {
   return (
     <div className="spinner">
-      <PacmanLoader color="#00e676" />
+      <PacmanLoader color="#9e9d24" />
     </div>
   );
 }
