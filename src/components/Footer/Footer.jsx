@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <footer className="page-footer lime lighten-4">
+    <footer className="page-footer lime lighten-4" data-testid="Footer">
       <div className="footer-copyright lime lighten-4">
         <div className="blue-grey-text lime lighten-4 container">
           © {new Date().getFullYear()} Copyright Text
