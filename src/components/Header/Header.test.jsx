@@ -1,23 +1,20 @@
 import { render, screen } from '@testing-library/react';
-import { createStore } from 'redux';
-import { Provider } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import Header from './Header';
-const startingState = {
-  isAuth: false,
-  user: null,
-};
-// function reducer(state = startingState, action) {}
-function renderWithRedux(children, { initialState, store } = []) {
-  return {
-    ...render(<Provider store={store}>{children}</Provider>),
-  };
-}
+
+jest.mock('react-redux');
 
 describe('Header component', () => {
   it('Header renders with redux', () => {
-    const { getByRole } = renderWithRedux(<Header />);
+    useSelector.mockReturnValue('');
+    render(<Header />);
 
+    expect(screen.getByTestId('nav')).toBeInTheDocument();
+  });
+  it('Header contains list', () => {
+    useSelector.mockReturnValue('');
+    render(<Header />);
     expect(screen.getByRole('list')).toBeInTheDocument();
   });
 });

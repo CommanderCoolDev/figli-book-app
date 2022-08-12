@@ -15,7 +15,7 @@ function Header() {
     toast(`User  ${user} logged out! Seeya!)`);
   };
   return (
-    <nav className=" green lime lighten-4">
+    <nav className=" green lime lighten-4" data-testid="nav">
       <div className="nav-wrapper">
         <a
           href="/"

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux/es/hooks/useSelector';
+import { useSelector } from 'react-redux';
 import { CSVLink } from 'react-csv';
 import { selectBooks } from '../../store/selectors/books-selector';
 import Filter from '../Search/Filter';
@@ -14,7 +14,6 @@ const Books = () => {
   const [booksByFilter, setBooksByFilter] = useState([]);
 
   const books = useSelector(selectBooks);
-  console.log(books);
 
   const navigate = useNavigate();
   const data = books.map(book => book.volumeInfo);
@@ -44,7 +43,6 @@ const Books = () => {
   useEffect(() => {
     if (booksByFilter.length === 0) {
       setCsvData(data);
-      // console.log(data);
     } else {
       setCsvData(filteredData);
     }
@@ -52,7 +50,7 @@ const Books = () => {
 
   return (
     <>
-      <div className="container content">
+      <div className="container content" data-testid="Books">
         {booksByFilter.length > 0 ? (
           <>
             {!booksByFilter.length ? (
