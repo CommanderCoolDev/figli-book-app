@@ -14,6 +14,7 @@ const Books = () => {
   const [booksByFilter, setBooksByFilter] = useState([]);
 
   const books = useSelector(selectBooks);
+  console.log(books);
 
   const navigate = useNavigate();
   const data = books.map(book => book.volumeInfo);
@@ -43,10 +44,11 @@ const Books = () => {
   useEffect(() => {
     if (booksByFilter.length === 0) {
       setCsvData(data);
+      // console.log(data);
     } else {
       setCsvData(filteredData);
     }
-  }, [booksByFilter]);
+  }, [booksByFilter, books]);
 
   return (
     <>
