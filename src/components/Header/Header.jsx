@@ -18,7 +18,7 @@ function Header() {
     <nav className=" green lime lighten-4" data-testid="nav">
       <div className="nav-wrapper">
         <a
-          href="/"
+          href="/figli-book-app"
           className="blue-grey-text text-darken-3 brand-logo center right-on-med-and-down"
         >
           Figli

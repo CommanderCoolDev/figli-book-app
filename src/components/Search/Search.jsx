@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 import { fetchSearch } from '../../api/api';
 import { useDispatch } from 'react-redux';
 import Hero from '../Hero/Hero';
@@ -6,7 +7,8 @@ import { setBooks } from '../../store/actions/books-action';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const Search = ({ search, setSearch }) => {
+const Search = () => {
+  const [search, setSearch] = useState('');
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
@@ -35,32 +37,34 @@ const Search = ({ search, setSearch }) => {
   };
   return (
     <>
-      <div className="row search-box">
-        <div className="input-field col s12">
-          <input
-            type="search"
-            id="search-field"
-            placeholder="Search..."
-            onKeyDown={handleKey}
-            value={search}
-            onChange={e => setSearch(e.target.value)}
-          />
-          <button
-            className="btn lime lighten-1"
-            type="submit"
-            style={{
-              position: 'absolute',
-              top: '5px',
-              right: '20px',
-            }}
-            onClick={handleClick}
-          >
-            Search
-          </button>
+      <main className="container content">
+        <div className="row search-box">
+          <div className="input-field col s12">
+            <input
+              type="search"
+              id="search-field"
+              placeholder="Search..."
+              onKeyDown={handleKey}
+              value={search}
+              onChange={e => setSearch(e.target.value)}
+            />
+            <button
+              className="btn lime lighten-1"
+              type="submit"
+              style={{
+                position: 'absolute',
+                top: '5px',
+                right: '20px',
+              }}
+              onClick={handleClick}
+            >
+              Search
+            </button>
+          </div>
         </div>
-      </div>
 
-      <Hero />
+        <Hero />
+      </main>
     </>
   );
 };

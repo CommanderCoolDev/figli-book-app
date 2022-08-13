@@ -10,10 +10,10 @@ import Spinner from './components/Spinner/Spinner';
 import LoginView from './views/AuthView/LoginView';
 import RegisterView from './views/AuthView/RegisterView';
 import PrivateRoute from './components/Routes/PrivateRoute';
-const MainView = lazy(() => import('./views/MainView/MainView'));
-const Selected = lazy(() => import('./components/Selected/Selected'));
-const Books = lazy(() => import('./components/Main/Books'));
-const Shelf = lazy(() => import('./components/Shelf/Shelf'));
+const SearchView = lazy(() => import('./views/SearchView/SearchView'));
+const SelectedView = lazy(() => import('./views/SelectedView/SelectedView'));
+const BooksView = lazy(() => import('./views/BooksView/BookView'));
+const ShelfView = lazy(() => import('./views/ShelfView/ShelfView'));
 const NotFoundView = lazy(() => import('./views/NotFoundView/NotFoundView'));
 
 function App() {
@@ -28,7 +28,7 @@ function App() {
             path="/figli-book-app"
             element={
               <PrivateRoute>
-                <MainView />
+                <SearchView />
               </PrivateRoute>
             }
           />
@@ -36,7 +36,7 @@ function App() {
             path="/books"
             element={
               <PrivateRoute>
-                <Books />
+                <BooksView />
               </PrivateRoute>
             }
           />
@@ -44,7 +44,7 @@ function App() {
             path="/book/:id"
             element={
               <PrivateRoute>
-                <Selected />
+                <SelectedView />
               </PrivateRoute>
             }
           />
@@ -52,7 +52,7 @@ function App() {
             path="/shelf"
             element={
               <PrivateRoute>
-                <Shelf />
+                <ShelfView />
               </PrivateRoute>
             }
           />
