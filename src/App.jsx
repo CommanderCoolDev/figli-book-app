@@ -7,14 +7,14 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 
 import Spinner from './components/Spinner/Spinner';
-import LoginView from './views/AuthView/LoginView';
-import RegisterView from './views/AuthView/RegisterView';
+import LoginView from './pages/AuthPage/LoginPage';
+import RegisterView from './pages/AuthPage/RegisterPage';
 import PrivateRoute from './components/Routes/PrivateRoute';
-const SearchView = lazy(() => import('./views/SearchView/SearchView'));
-const SelectedView = lazy(() => import('./views/SelectedView/SelectedView'));
-const BooksView = lazy(() => import('./views/BooksView/BookView'));
-const ShelfView = lazy(() => import('./views/ShelfView/ShelfView'));
-const NotFoundView = lazy(() => import('./views/NotFoundView/NotFoundView'));
+const SearchView = lazy(() => import('./pages/SearchPage/SearchPage'));
+const SelectedView = lazy(() => import('./pages/SelectedPage/SelectedPage'));
+const BooksView = lazy(() => import('./pages/BooksPage/BookPage'));
+const ShelfView = lazy(() => import('./pages/ShelfPage/ShelfPage'));
+const NotFoundView = lazy(() => import('./pages/NotFoundPage/NotFoundPage'));
 
 function App() {
   return (

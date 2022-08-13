@@ -6,12 +6,21 @@ import { toast } from 'react-toastify';
 
 import { setSelected } from '../../store/actions/selected-action';
 import { selectBooks } from '../../store/selectors/books-selector';
+import { selectShelf } from '../../store/selectors/shelf-selector';
 
 const Book = ({ book }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const books = useSelector(selectBooks);
+  const shelf = useSelector(selectShelf);
+
+  const shelfIds = shelf.map(el => el.id);
+
   const handleAddToShelfClick = book => {
+    if (shelfIds.includes(book.id)) {
+      toast.error('Already in the BookShelf!');
+      return;
+    }
     dispatch(setShelf(book));
     toast('Book added to shelf!');
   };

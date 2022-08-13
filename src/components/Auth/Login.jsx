@@ -29,7 +29,7 @@ const LoginForm = () => {
 
   return (
     <>
-      <div className="auth-box">
+      <div className="auth-box content">
         <AuthForm title=" Sign In" handleClick={handleLogin} />
         <p>
           Or <Link to="/register">register</Link>

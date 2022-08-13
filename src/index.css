@@ -12,6 +12,7 @@ nav {
 }
 .bg {
   background-image: url('./images/bg2.jpg');
+  position: relative;
 }
 .spinner {
   position: absolute;
@@ -133,7 +134,7 @@ nav {
   width: 35%;
 }
 .auth-box {
-  height: 74vh;
+  /* height: 83vh; */
   width: 35%;
   display: flex;
   justify-content: center;
