@@ -1,14 +1,28 @@
 {
   "files": {
-    "main.css": "/figli-book-app/static/css/main.b19f716d.css",
-    "main.js": "/figli-book-app/static/js/main.ee3743c0.js",
+    "main.css": "/figli-book-app/static/css/main.dfbc7a48.css",
+    "main.js": "/figli-book-app/static/js/main.3e67256e.js",
+    "static/js/783.ade65e0b.chunk.js": "/figli-book-app/static/js/783.ade65e0b.chunk.js",
+    "static/js/126.910d7fda.chunk.js": "/figli-book-app/static/js/126.910d7fda.chunk.js",
+    "static/js/237.1b06c706.chunk.js": "/figli-book-app/static/js/237.1b06c706.chunk.js",
+    "static/js/13.95f7373a.chunk.js": "/figli-book-app/static/js/13.95f7373a.chunk.js",
+    "static/js/61.4043522f.chunk.js": "/figli-book-app/static/js/61.4043522f.chunk.js",
+    "static/js/569.e60d99ef.chunk.js": "/figli-book-app/static/js/569.e60d99ef.chunk.js",
+    "static/js/186.fbb5bac9.chunk.js": "/figli-book-app/static/js/186.fbb5bac9.chunk.js",
     "static/media/bg2.jpg": "/figli-book-app/static/media/bg2.91a5c0e067b999c30c5e.jpg",
     "index.html": "/figli-book-app/index.html",
-    "main.b19f716d.css.map": "/figli-book-app/static/css/main.b19f716d.css.map",
-    "main.ee3743c0.js.map": "/figli-book-app/static/js/main.ee3743c0.js.map"
+    "main.dfbc7a48.css.map": "/figli-book-app/static/css/main.dfbc7a48.css.map",
+    "main.3e67256e.js.map": "/figli-book-app/static/js/main.3e67256e.js.map",
+    "783.ade65e0b.chunk.js.map": "/figli-book-app/static/js/783.ade65e0b.chunk.js.map",
+    "126.910d7fda.chunk.js.map": "/figli-book-app/static/js/126.910d7fda.chunk.js.map",
+    "237.1b06c706.chunk.js.map": "/figli-book-app/static/js/237.1b06c706.chunk.js.map",
+    "13.95f7373a.chunk.js.map": "/figli-book-app/static/js/13.95f7373a.chunk.js.map",
+    "61.4043522f.chunk.js.map": "/figli-book-app/static/js/61.4043522f.chunk.js.map",
+    "569.e60d99ef.chunk.js.map": "/figli-book-app/static/js/569.e60d99ef.chunk.js.map",
+    "186.fbb5bac9.chunk.js.map": "/figli-book-app/static/js/186.fbb5bac9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b19f716d.css",
-    "static/js/main.ee3743c0.js"
+    "static/css/main.dfbc7a48.css",
+    "static/js/main.3e67256e.js"
   ]
 }
