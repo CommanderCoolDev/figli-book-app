@@ -72,7 +72,7 @@ const Filter = ({ booksByFilter, setBooksByFilter }) => {
         <Select
           styles={customStyles}
           className="react-select-container  "
-          placeholder="40 by default"
+          placeholder="40 books by default"
           defaultValue={selectedOption}
           onChange={setSelectedOption}
           options={options}

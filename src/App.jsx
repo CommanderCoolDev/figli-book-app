@@ -2,10 +2,8 @@ import { lazy, Suspense } from 'react';
 import { ToastContainer, Flip } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Route, Routes } from 'react-router-dom';
-
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
-
 import Spinner from './components/Spinner/Spinner';
 import LoginView from './pages/AuthPage/LoginPage';
 import RegisterView from './pages/AuthPage/RegisterPage';
@@ -20,6 +18,7 @@ function App() {
   return (
     <div className="bg">
       <Header />
+
       <Suspense fallback={<Spinner />}>
         <Routes>
           <Route path="/login" element={<LoginView />} />
