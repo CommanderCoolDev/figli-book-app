@@ -9,6 +9,8 @@ For styling I used Materialize.
 
 Global state management was provided by React-redux.
 
+https://github.com/CommanderCoolDev/figli-book-app/blob/main/src/images/mock2.png
+
 
 
 
